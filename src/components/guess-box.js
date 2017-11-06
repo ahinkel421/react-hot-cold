@@ -3,12 +3,17 @@ import GuessFeedback from './guess-feedback';
 import Form from './form';
 import UserGuesses from './user-guesses';
 
+import './guess-box.css';
+
 export default function GuessBox(props) {
 	return (
-		<div>
-			<GuessFeedback />
-			<Form />
-			<UserGuesses />
-		</div>
+		<section className='guessBoxSection'>
+			<h1 className='header'>HOT or COLD</h1>
+			<div className='guessBox'>
+				<GuessFeedback />
+				<Form />
+				<UserGuesses />
+			</div>
+		</section>
 	);
 }

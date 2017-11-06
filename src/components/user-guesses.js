@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './user-guesses.css';
+
 export default function UserGuesses(props) {
 	return (
 		<div>

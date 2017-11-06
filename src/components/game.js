@@ -2,9 +2,11 @@ import React from 'react';
 import Navbar from './navbar';
 import GuessBox from './guess-box';
 
+import './game.css';
+
 export default function Game(props) {
 	return (
-		<div>
+		<div className='gameBody'>
 			<Navbar />
 			<GuessBox />
 		</div>

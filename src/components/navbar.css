@@ -1,0 +1,17 @@
+.navbar {
+	color: white;
+}
+
+.newGame, .moreInfo {
+	display: inline-block;
+	position: absolute;
+	top: 15px;
+}
+
+.moreInfo {
+	left: 20px;
+}
+
+.newGame {
+	right: 20px;
+}

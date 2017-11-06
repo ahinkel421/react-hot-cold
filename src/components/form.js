@@ -1,11 +1,13 @@
 import React from 'react';
 
+import './form.css';
+
 export default function Form(props) {
 	return (
-		<form>
+		<form className='form'>
 			<input placeholder='Enter your Guess' />
 			<button>Guess</button>
-			<span>Guess #</span><span>1</span>
+			<span className='guessText'>Guess #</span><span className='guessNumber'>1</span>
 		</form>
 	);
 }
