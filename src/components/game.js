@@ -83,22 +83,3 @@ export default class Game extends React.Component {
 	}
 }
 
-//STATES:
-
-//array of user guesses
-//number you are trying to guess
-// Make a guess vs. hot/cold/warm etc.
-
-//Complete: 
-//1. added function stubs
-//2. feedback now reflects state
-//3. Added CSS files
-//4. Their guess should be appended to the user-guesses section (state of userGuesses should be updated).
-//5. //When new game gets clicked:
-			//1. State gets reset to default state.
-			//2. Current guess # gets reset.
-//6. The difference between their guess, and the correct answer should be determined.
-//7. If the difference is less than 10, return hot, less than 20, return warm, ect.
-//8. Render that feedback to 'guess-feedback.js.'
-//9. If user's guess === correct answer, update state.feedback to "you win! etc."
-

@@ -7,7 +7,6 @@ export default class Navbar extends React.Component {
 		super(props);
 		this.handleNewGame = this.handleNewGame.bind(this);
 	}
-	//Can't get this to work
 	handleNewGame() {
 		if (this.props.handleNewGame) {
 			this.props.handleNewGame();
