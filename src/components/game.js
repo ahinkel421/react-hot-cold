@@ -12,6 +12,8 @@ export default class Game extends React.Component {
 			correctAnswer: Math.floor(Math.random() * 100) + 1,
 			feedback: 'Make your Guess!'
 		}
+		this.handleNewGame = this.handleNewGame.bind(this);
+		this.handleGuess = this.handleGuess.bind(this);
 	}
 
 	handleNewGame() {
@@ -21,9 +23,14 @@ export default class Game extends React.Component {
 			console.log("it is working");
 	}
 
-	handleGuess(event) {
+	handleGuess(guess) {
+		let userGuessesCopy = this.state.userGuesses.slice();
+		userGuessesCopy.push(guess);
+		this.setState({
+			userGuesses: userGuessesCopy
+		});
 	//When the user makes a guess:
-		//1. Their guess should be appended to the user-guesses section (state of userGuesses should be updated).
+		
 		//2. Guess#++ (increases by one).
 		//3. The difference between their guess, and the correct answer should be determined.
 		//4. If the difference is less than 10, return hot, less than 20, return warm, ect.
@@ -34,8 +41,8 @@ export default class Game extends React.Component {
 	render() {
 		return (
 		<div className='gameBody'>
-			<Navbar onClick={this.handleNewGame}/>
-			<GuessBox feedback={this.state.feedback}/>
+			<Navbar onNewGame={this.handleNewGame}/>
+			<GuessBox feedback={this.state.feedback} guesses={this.state.userGuesses} handleGuess={this.handleGuess} />
 		</div>
 		);
 	}
@@ -46,3 +53,11 @@ export default class Game extends React.Component {
 //array of user guesses
 //number you are trying to guess
 // Make a guess vs. hot/cold/warm etc.
+
+//Complete: 
+//1. added function stubs
+//2. feedback now reflects state
+//3. Added CSS files
+//4. Their guess should be appended to the user-guesses section (state of userGuesses should be updated).
+
+

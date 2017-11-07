@@ -7,8 +7,8 @@ export default class Navbar extends React.Component {
 	//Can't get this to work
 	handleNewGame(event) {
 		event.preventDefault();
-		if (this.props.onClick) {
-			this.props.onClick();
+		if (this.props.onNewGame) {
+			this.props.onNewGame();
 		}
 	}
 

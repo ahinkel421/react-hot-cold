@@ -3,14 +3,13 @@ import React from 'react';
 import './user-guesses.css';
 
 export default function UserGuesses(props) {
+	let listItems = props.guesses.map((guess, i) => {
+		return <li className='guess' key={i}>{guess}</li>
+	});
+
 	return (
 		<div className='userGuesses'>
-			<ul className='guessList'>
-				<li className='guess'>5</li>
-				<li className='guess'>75</li>
-				<li className='guess'>60</li>
-				<li className='guess'>87</li>
-			</ul>
+			<ul className='guessList'>{listItems}</ul>
 		</div>
 	);
 }
