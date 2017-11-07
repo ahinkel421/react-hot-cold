@@ -30,8 +30,6 @@ export default class Game extends React.Component {
 			userGuesses: userGuessesCopy
 		});
 	//When the user makes a guess:
-		
-		//2. Guess#++ (increases by one).
 		//3. The difference between their guess, and the correct answer should be determined.
 		//4. If the difference is less than 10, return hot, less than 20, return warm, ect.
 		//5. Render that feedback to 'guess-feedback.js.'
