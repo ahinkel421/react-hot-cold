@@ -17,10 +17,11 @@ export default class Game extends React.Component {
 	}
 
 	handleNewGame() {
-		//When new game gets clicked:
-			//1. State gets reset to default state.
-			//2. Current guess # gets reset.
-			console.log("it is working");
+		this.setState({
+			userGuesses: [],
+			correctAnswer: Math.floor(Math.random() * 100) + 1,
+			feedback: 'Make your Guess!'
+		});
 	}
 
 	handleGuess(guess) {
@@ -39,7 +40,7 @@ export default class Game extends React.Component {
 	render() {
 		return (
 		<div className='gameBody'>
-			<Navbar onNewGame={this.handleNewGame}/>
+			<Navbar handleNewGame={this.handleNewGame}/>
 			<GuessBox feedback={this.state.feedback} guesses={this.state.userGuesses} handleGuess={this.handleGuess} />
 		</div>
 		);
@@ -57,5 +58,7 @@ export default class Game extends React.Component {
 //2. feedback now reflects state
 //3. Added CSS files
 //4. Their guess should be appended to the user-guesses section (state of userGuesses should be updated).
-
+//5. //When new game gets clicked:
+			//1. State gets reset to default state.
+			//2. Current guess # gets reset.
 

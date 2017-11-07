@@ -3,12 +3,14 @@ import React from 'react';
 import './navbar.css';
 
 export default class Navbar extends React.Component {
-
+	constructor(props) {
+		super(props);
+		this.handleNewGame = this.handleNewGame.bind(this);
+	}
 	//Can't get this to work
-	handleNewGame(event) {
-		event.preventDefault();
-		if (this.props.onNewGame) {
-			this.props.onNewGame();
+	handleNewGame() {
+		if (this.props.handleNewGame) {
+			this.props.handleNewGame();
 		}
 	}
 
@@ -16,7 +18,7 @@ export default class Navbar extends React.Component {
 		return (
 		<nav>
 			<h3 className='navbar moreInfo'>WHAT?</h3>
-			<h3 className='navbar newGame' onClick={e => this.handleNewGame}>+NEW GAME</h3>
+			<h3 className='navbar newGame' onClick={this.handleNewGame}>+NEW GAME</h3>
 		</nav>
 		);
 	}
