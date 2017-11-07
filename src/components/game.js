@@ -14,10 +14,11 @@ export default class Game extends React.Component {
 		}
 	}
 
-	handleNewGame(event) {
+	handleNewGame() {
 		//When new game gets clicked:
 			//1. State gets reset to default state.
 			//2. Current guess # gets reset.
+			console.log("it is working");
 	}
 
 	handleGuess(event) {
@@ -27,14 +28,14 @@ export default class Game extends React.Component {
 		//3. The difference between their guess, and the correct answer should be determined.
 		//4. If the difference is less than 10, return hot, less than 20, return warm, ect.
 		//5. Render that feedback to 'guess-feedback.js.'
-		//6. If user's guess === correct answer, 
+		//6. If user's guess === correct answer, update state.feedback to "you win! etc."
 	}
 
 	render() {
 		return (
 		<div className='gameBody'>
-			<Navbar />
-			<GuessBox />
+			<Navbar onClick={this.handleNewGame}/>
+			<GuessBox feedback={this.state.feedback}/>
 		</div>
 		);
 	}

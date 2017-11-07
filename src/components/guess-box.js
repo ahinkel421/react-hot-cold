@@ -10,7 +10,7 @@ export default function GuessBox(props) {
 		<section className='guessBoxSection'>
 			<h1 className='header'>HOT or COLD</h1>
 			<div className='guessBox'>
-				<GuessFeedback />
+				<GuessFeedback feedback={props.feedback}/>
 				<Form />
 				<UserGuesses />
 			</div>
