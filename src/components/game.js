@@ -36,7 +36,11 @@ export default class Game extends React.Component {
 
 		let feedback;
 
-		if (difference >= 70) {
+		if (isNaN(guess)) {
+			feedback = "You didn't even guess anything..."
+		}
+
+		else if (difference >= 70) {
 			feedback = "You could not be more freezing..."
 		}
 		else if (difference >= 50) {
@@ -46,10 +50,10 @@ export default class Game extends React.Component {
 			feedback = "You're cold";
 		}
 		else if (difference >= 15) {
-			feedback = "You're pretty warm...";
+			feedback = "You're kind of warm...";
 		}
 		else if (difference >= 10) {
-			feedback = "You're really warm!";
+			feedback = "You're warm";
 		}
 		else if (difference >= 5) {
 			feedback = "You're hot!"
@@ -66,14 +70,7 @@ export default class Game extends React.Component {
 
 		this.setState({
 			feedback
-		});
-
-
-	//When the user makes a guess:
-		//3. The difference between their guess, and the correct answer should be determined.
-		//4. If the difference is less than 10, return hot, less than 20, return warm, ect.
-		//5. Render that feedback to 'guess-feedback.js.'
-		//6. If user's guess === correct answer, update state.feedback to "you win! etc."
+		});		
 	}
 
 	render() {
@@ -100,4 +97,8 @@ export default class Game extends React.Component {
 //5. //When new game gets clicked:
 			//1. State gets reset to default state.
 			//2. Current guess # gets reset.
+//6. The difference between their guess, and the correct answer should be determined.
+//7. If the difference is less than 10, return hot, less than 20, return warm, ect.
+//8. Render that feedback to 'guess-feedback.js.'
+//9. If user's guess === correct answer, update state.feedback to "you win! etc."
 
