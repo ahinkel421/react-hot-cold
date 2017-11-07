@@ -20,7 +20,7 @@ export default class Game extends React.Component {
 		this.setState({
 			userGuesses: [],
 			correctAnswer: Math.floor(Math.random() * 100) + 1,
-			feedback: 'Make your Guess!'
+			feedback: 'Make your Guess!' 
 		});
 	}
 
@@ -30,6 +30,45 @@ export default class Game extends React.Component {
 		this.setState({
 			userGuesses: userGuessesCopy
 		});
+
+		guess = parseInt(guess, 10);
+		let difference = Math.abs(this.state.correctAnswer - guess);
+
+		let feedback;
+
+		if (difference >= 70) {
+			feedback = "You could not be more freezing..."
+		}
+		else if (difference >= 50) {
+			feedback = "You're freezing";
+		}
+		else if (difference >= 30) {
+			feedback = "You're cold";
+		}
+		else if (difference >= 15) {
+			feedback = "You're pretty warm...";
+		}
+		else if (difference >= 10) {
+			feedback = "You're really warm!";
+		}
+		else if (difference >= 5) {
+			feedback = "You're hot!"
+		}
+		else if (difference >= 2) {
+			feedback = "YOU'RE ON FIRE!!!"
+		}
+		else if (difference === 1) {
+			feedback = "IT BURNS!!!"
+		}
+		else {
+			feedback = "Jackpot!!! You win! Please click \"New Game\" to play again."
+		}
+
+		this.setState({
+			feedback
+		});
+
+
 	//When the user makes a guess:
 		//3. The difference between their guess, and the correct answer should be determined.
 		//4. If the difference is less than 10, return hot, less than 20, return warm, ect.
