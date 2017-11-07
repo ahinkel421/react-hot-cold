@@ -17,8 +17,18 @@ button {
 	font-size: 35px;
 	width: 300px;
 	height: 50px;
-	margin: 35px auto 0;
+	margin: 35px auto 15px;
 	border: solid 1px #1f253d;
 	border-radius: 4px;
 	display: block;
+}
+
+.guessText {
+	font-size: 28px;
+}
+
+.guessNumber {
+	color: #f39c12;
+	font-size: 40px;
+	font-weight: bold;
 }

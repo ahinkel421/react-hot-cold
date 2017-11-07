@@ -8,6 +8,10 @@
 	top: 15px;
 }
 
+.newGame:hover, .moreInfo:hover {
+	cursor: pointer;
+}
+
 .moreInfo {
 	left: 20px;
 }

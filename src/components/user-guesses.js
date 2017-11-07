@@ -4,11 +4,13 @@ import './user-guesses.css';
 
 export default function UserGuesses(props) {
 	return (
-		<div>
-			<span>5</span>
-			<span>75</span>
-			<span>60</span>
-			<span>87</span>
+		<div className='userGuesses'>
+			<ul className='guessList'>
+				<li className='guess'>5</li>
+				<li className='guess'>75</li>
+				<li className='guess'>60</li>
+				<li className='guess'>87</li>
+			</ul>
 		</div>
 	);
 }
